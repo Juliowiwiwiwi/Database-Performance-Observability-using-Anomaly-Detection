@@ -1,23 +1,4 @@
-"""
-Database Performance Observability - Anomaly Detection Dashboard
-==================================================================
 
-Interactive Streamlit dashboard over the outputs of v2model.py.
-
-Folder layout expected (same project structure as v2model.py):
-    <project_root>/DataSets/query_log.csv
-    <project_root>/DataSets/system_metrics.csv
-    <project_root>/src/v2model.py
-    <project_root>/src/dashboard.py         <- this file
-    <project_root>/src/Outputs/
-        query_log_scored_v2.csv
-        incidents_v2.csv
-
-Run with:
-    streamlit run dashboard.py
-
-If Outputs/query_log_scored_v2.csv doesn't exist yet, run v2model.py first.
-"""
 
 import numpy as np
 import pandas as pd
@@ -43,7 +24,7 @@ st.set_page_config(
 )
 
  
-# DATA LOADING (cached so filters don't re-read 800k+ rows every click)
+# DATA LOADING cached so filters don't re-read 800k+ rows every click
  
 
 NEEDED_COLS = [
